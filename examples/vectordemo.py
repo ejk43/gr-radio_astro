@@ -8,7 +8,7 @@
 # Title: Vector averaging and median comparison
 # Author: Glen Langston
 # Description: This GRC demo compares the outputs of average and median with straght vector plotting
-# GNU Radio version: 3.8.1.0
+# GNU Radio version: v3.8.3.1-4-gafa3b031
 
 from distutils.version import StrictVersion
 
@@ -122,7 +122,7 @@ class vectordemo(gr.top_block, Qt.QWidget):
             self.qtgui_vector_sink_f_0.set_line_alpha(i, alphas[i])
 
         self._qtgui_vector_sink_f_0_win = sip.wrapinstance(self.qtgui_vector_sink_f_0.pyqwidget(), Qt.QWidget)
-        self.top_grid_layout.addWidget(self._qtgui_vector_sink_f_0_win)
+        self.top_layout.addWidget(self._qtgui_vector_sink_f_0_win)
         self.fft_vxx_0 = fft.fft_vcc(fftsize, True, window.blackmanharris(1024), False, 1)
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_float*fftsize, samp_rate,True)
         self.blocks_stream_to_vector_0 = blocks.stream_to_vector(gr.sizeof_gr_complex*1, fftsize)
@@ -136,7 +136,6 @@ class vectordemo(gr.top_block, Qt.QWidget):
         self.analog_sig_source_x_0_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, 2e5, .05, 0, 0)
         self.analog_sig_source_x_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, 3e5, .1, 0, 0)
         self.analog_noise_source_x_0 = analog.noise_source_c(analog.GR_GAUSSIAN, 1, 0)
-
 
 
         ##################################################
