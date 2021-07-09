@@ -4,7 +4,7 @@ category: '[radio_astro]'
 
 templates:
   imports: import radio_astro
-  make: radio_astro.ra_integrate(${noteName}, ${observers}, ${vlen}, ${frequency}, ${bandwidth}, ${azimuth}, ${elevation}, ${inttype}, ${obstype}, ${nmedian}, ${units}, ${thot}, ${tcold})
+  make: radio_astro.ra_integrate(${setup}, ${observers}, ${vlen}, ${frequency}, ${bandwidth}, ${azimuth}, ${elevation}, ${inttype}, ${obstype}, ${nmedian}, ${units}, ${thot}, ${tcold})
   callbacks:
     - set_setup(${setup})
     - set_observers(${observers})
@@ -57,6 +57,10 @@ parameters:
   label: Obstype
   dtype: int
   default: '1'
+- id: nmedian
+  label: nmedian
+  dtype: int
+  default: '4096'
 - id: count
   label: Count
   dtype: int

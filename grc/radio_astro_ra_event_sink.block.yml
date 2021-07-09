@@ -4,7 +4,7 @@ category: '[radio_astro]'
 
 templates:
   imports: import radio_astro
-  make: radio_astro.ra_event_sink(${noteName}, ${vlen}, ${frequency}, ${bandwidth}, ${record}, ${note}, ${observer}, ${telescope}, ${device}, ${gain1}, ${azimuth}, ${elevation})
+  make: radio_astro.ra_event_sink(${note}, ${vlen}, ${frequency}, ${sample_rate}, ${record}, ${note}, ${observers}, ${telescope}, ${device}, ${gain1}, ${azimuth}, ${elevation})
   callbacks:
     - set_setup(${setup})
     - set_vlen(${vlen})
@@ -12,7 +12,7 @@ templates:
     - set_record(${record})
     - set_frequency(${frequency})
     - set_note(${note})
-    - set_observer(${observer})
+    - set_observer(${observers})
     - set_telescope(${telescope})
     - set_device(${device})
     - set_frequency(${frequency})
